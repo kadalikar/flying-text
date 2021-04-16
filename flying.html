@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <link rel="shortcut icon" type="img/jpg" href=" https://avengersbucketimg.s3.ap-south-1.amazonaws.com/images/img/17.jpg"/>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Flying text
+    </title>
+</head>
+<body>
+<style>
+@import url('http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap');
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Roboto',sans-serif;
+}
+section{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(17, 19, 18);
+}
+section .text {
+    position: relative;
+    text-align: center;
+    color: rgba(155, 99, 9, 0.733);
+    margin: 40px;
+}
+section .text  span {
+    position: relative;
+    display: inline-block;
+}
+
+    </style>
+     <section>
+         <p class="text">
+            Fuelled by his restored faith in humanity, and inspired by Superman's selfless act, Bruce Wayne enlists newfound ally Diana Prince to face an even greater threat. Together, Batman and Wonder Woman work quickly to recruit a team to stand against this newly-awakened enemy. Despite the formation of an unprecedented league of heroes in Batman, Wonder Woman, Aquaman, Cyborg and the Flash, it may be too late to save the planet from an assault of catastrophic proportions.Steppenwolf and his Parademons return after eons to capture Earth. However, Batman seeks the help of Wonder Woman to recruit and assemble Flash, Cyborg and Aquaman to fight the powerful new enemy.As details surfaced about the film's troubled production and its state before Snyder stepped down, many fans expressed interest in an alternate cut more faithful to Snyder's vision. Fans and members of the cast and crew  .
+
+            Zack Snyder's Justice League was released on HBO Max in the United States on March 18, 2021. Critics generally considered it an improvement over the 2017 theatrical version, with praise for Snyder's direction and deeper characterizations, but some considered its four-hour runtime excessive.
+         </p>
+     </section>
+     <script src="anime.min.js"></script>
+     <script>
+        const text = document.querySelector('.text');
+        text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>");
+
+        const animation = anime.timeline({
+            targets :'.text span',
+            easing :'easeInOutExpo',
+            loop:true,
+        });
+
+        animation
+        .add({
+            rotate:function(){
+                return anime.random(-360,360)
+            },
+            translateX :function(){
+                return anime.random(-500,500)
+            },
+            translateY :function(){
+                return anime.random(-500,500)
+            },
+            duration:5000,
+            delay:anime.stagger(20),
+        }) 
+        .add({
+            rotate: 0,
+            translateX : 0,
+            translateY : 0,
+            duration:5000,
+            delay:anime.stagger(20),
+        }) 
+    </script>
+</body>
+
+</html>
